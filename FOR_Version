@@ -1,0 +1,20 @@
+/*
+Like WHILE, nesting FOR loops normally causes the O-time to increase by magnitudes, but due to RETURN syntax, it has similar (if not better) processing efficiency to that of the previous IF_Version.
+This also reads very clean to the human eye.
+I still have not applied timers to test runtimes and while I have thought about doing so to find out what is fastest, it is not worth my effort at the moment.
+*/
+
+def efficient_for_logic (a ,b ,c) :
+  for x in range (a ,0 ,-1) :
+    for x in range (b ,0 ,-1) :
+      for x in range (c ,0 ,-1) : return (7)
+      return (6)
+    for x in range (c ,0 ,-1) : return (5)
+    return (1)
+  for x in range (b ,0 ,-1) :
+    for x in range (c ,0 ,-1) : return (4)
+    return (2)
+  for x in range (c ,0 ,-1) : return (3)
+  return (0)
+
+print(efficient_for_logic(1 ,0 ,1))
