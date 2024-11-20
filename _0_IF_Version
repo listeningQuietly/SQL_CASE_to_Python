@@ -1,6 +1,8 @@
 /*
-This was by a wide margin the easiest to convert from SQL to Python because CASE works extremely similarly to IF.
-So much so, it was almost a copy-paste translation.
+This was exceptionally easy to convert from SQL to Python because CASE works extremely similarly to IF.
+So much so, it felt like a copy-paste translation.
+Given I do not have mountains of data to test the two against each other, I would guess the SQL version has a shorter runtime because that language is designed for set operations, but Python is famous for performing well, regardless of use-case.
+To make it more fair, I should at least put a, b,and c in tuples.
 */
 
 def efficient_if_logic (a ,b ,c) :
