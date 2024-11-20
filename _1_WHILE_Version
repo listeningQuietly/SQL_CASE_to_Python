@@ -4,7 +4,7 @@ This reads disturbingly clean to the human eye.
 While I have not applied timers on previous versions to test runtimes because O-time is extremely accurate when scaling, this is the first time I have thought about doing so to find out what is fastest.
 */
 
-def efficient_while_logic (a ,b ,c) :
+def segmenting_while_logic (a ,b ,c) :
   while a == 1 :
     while b == 1 :
       while c == 1 : return (7)
@@ -17,4 +17,4 @@ def efficient_while_logic (a ,b ,c) :
   while c == 1 : return (3)
   return (0)
 
-print(efficient_while_logic(1 ,0 ,1))
+print(segmenting_while_logic(1 ,0 ,1))
