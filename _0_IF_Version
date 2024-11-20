@@ -5,7 +5,7 @@ Given I do not have mountains of data to test the two against each other, I woul
 To make it more fair, I should at least put a, b,and c in tuples.
 */
 
-def efficient_if_logic (a ,b ,c) :
+def segmenting_if_logic (a ,b ,c) :
   if a == 1 :
     if b == 1 :
       if c == 1 : return (7)
@@ -18,4 +18,4 @@ def efficient_if_logic (a ,b ,c) :
   elif c == 1 : return (3)
   return (0)
 
-print(efficient_if_logic(1 ,0 ,1))
+print(segmenting_if_logic(1 ,0 ,1))
