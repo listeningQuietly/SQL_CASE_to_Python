@@ -4,8 +4,7 @@ It is important to be able to perform effective processes, regardless of context
 
 The technical challenge is, does the syntax support the same level of efficiency? In actual runtimes, no. Not even close, you should use the best tool for the job because tools should be optimized for their use-case. But in terms of O-runtime, this is true. And here are a few ways to convert the previous SQL CASE answer to Python while retaining the optimized O-runtime.
 
-A database is typically designed to do one thing extremely well.
-It could be designed for report generation or produce outputs for downstream operations like dashboarding.
 All databases have rules on how the data is curated and maintained, Relational Databases most of all.
 Relational databases are so strict and structured, accounts love them because the internal controls are 'baked in'.
-There are change rules protecting data points, there are change rules protecting data types, there are   
+There are change rules protecting data points, there are rules protecting data types, there are rules dictating who can view what, and transparency of the governance of all.
+So there's a lot that goes on into maintaining the backend.
