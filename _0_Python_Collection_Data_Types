@@ -1,6 +1,8 @@
 /*
 
 
+But to data scientists, data is data is data is... 
+There are four collection data types in Python 3.7 and they are accurately described as follows.
 */
 
 def python_data_types():
