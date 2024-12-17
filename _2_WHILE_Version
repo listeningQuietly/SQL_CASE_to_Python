@@ -1,7 +1,7 @@
 # Nesting WHILE loops like this normally causes the O-time to increase exponentially, but due to RETURN syntax, it has similar (if not better) processing efficiency to that of the previous IF_Version.
 # While I have not applied timers on previous versions to test runtimes because O-time is extremely accurate when scaling, this is the first time I have thought about doing so to find out what is fastest.
 
-#def segmenting_while_logic (a ,b ,c) :
+#def segmenting_via_while(a ,b ,c) :
 #  while a == 1 :
 #    while b == 1 :
 #      while c == 1 : return (7)
@@ -14,7 +14,7 @@
 #  while c == 1 : return (3)
 #  return (0)
 
-#print(segmenting_while_logic(1 ,0 ,1))
+#print(segmenting_via_while(1 ,0 ,1))
 
 dictionary_of_tuples = {"tuple1": (0,0,0), "tuple2": (0,0,1), "tuple3": (0,1,0), "tuple4": (0,1,1), "tuple5": (1,0,0), "tuple6": (1,0,1), "tuple7": (1,1,0), "tuple8": (1,1,1)}
 
