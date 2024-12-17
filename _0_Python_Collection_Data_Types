@@ -1,8 +1,7 @@
 /*
-
-
-But to data scientists, data is data is data is... 
-There are four collection data types in Python 3.7 and they are accurately described as follows.
+To data scientists, data is data is data is... 
+To be able to convert our optimized sort to Python, we must have a collection of data to sort through.
+There are four collection data types in Python 3.7 and they are described as follows for our data use-case.
 */
 
 def python_data_types():
@@ -11,9 +10,9 @@ def python_data_types():
   print("Good for removing duplicates, but bad for many data operations.")
   set_of_items = {"a1"}
   set_of_items.add("b2")
-  set_of_items.update({"b2","c3"}) #update for multiple values like a set.
-  set_of_items |= {"b2","c3"}|{"c3","d4"} #| is like update, but allows for multiples of multiples.
-  set_of_items.remove("d4")
+  set_of_items.update({"b2","c3"}) # Update for multiple values like a set.
+  set_of_items |= {"b2","c3"}|{"c3","d4"} # | is like update, but allows for multiples of multiples.
+  set_of_items.remove("d4") # Didn't add duplicates previously, but we still don't want d4 yet.
   for x in set_of_items:
     print(x)
 
