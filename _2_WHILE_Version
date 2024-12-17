@@ -16,11 +16,7 @@
 
 #print(segmenting_while_logic(1 ,0 ,1))
 
-# Making an extremely basic dictionary.
 dictionary_of_tuples = {"tuple1": (0,0,0), "tuple2": (0,0,1), "tuple3": (0,1,0), "tuple4": (0,1,1), "tuple5": (1,0,0), "tuple6": (1,0,1), "tuple7": (1,1,0), "tuple8": (1,1,1)}
-#print(dictionary_of_tuples['tuple8'])
-#for keys in dictionary_of_tuples:
-#  print(keys + ":", dictionary_of_tuples[keys])
 
 def segmenting_via_while (tuple) :
   while tuple[0] == 1 :
