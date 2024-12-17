@@ -1,20 +1,34 @@
-/*
-Like WHILE, nesting FOR loops normally causes the O-time to increase by magnitudes, but due to RETURN syntax, it has similar (if not better) processing efficiency to that of the previous IF_Version.
-This also reads very clean to the human eye.
-I still have not applied timers to test runtimes and while I have thought about doing so to find out what is fastest, it is not worth my effort at the moment.
-*/
+# Like WHILE, nesting FOR loops normally causes the O-time to increase by magnitudes, but due to RETURN syntax, it has similar processing to that of the IF_Version.
+# All three read very clean to the human eye.
 
-def efficient_for_logic (a ,b ,c) :
-  for x in range (a ,0 ,-1) :
-    for x in range (b ,0 ,-1) :
-      for x in range (c ,0 ,-1) : return (7)
+#def segmenting_via_for (a ,b ,c) :
+#  for x in range (a ,0 ,-1) :
+#    for x in range (b ,0 ,-1) :
+#      for x in range (c ,0 ,-1) : return (7)
+#      return (6)
+#    for x in range (c ,0 ,-1) : return (5)
+#    return (1)
+#  for x in range (b ,0 ,-1) :
+#    for x in range (c ,0 ,-1) : return (4)
+#    return (2)
+#  for x in range (c ,0 ,-1) : return (3)
+#  return (0)
+
+#print(efficient_for_logic(1 ,0 ,1))
+
+dictionary_of_tuples = {"tuple1": (0,0,0), "tuple2": (0,0,1), "tuple3": (0,1,0), "tuple4": (0,1,1), "tuple5": (1,0,0), "tuple6": (1,0,1), "tuple7": (1,1,0), "tuple8": (1,1,1)}
+def segmenting_via_for (tuple) :
+  for keys in range (tuple[0] ,0 ,-1) :
+    for keys in range (tuple[1] ,0 ,-1) :
+      for keys in range (tuple[2] ,0 ,-1) : return (7)
       return (6)
-    for x in range (c ,0 ,-1) : return (5)
+    for keys in range (tuple[2] ,0 ,-1) : return (5)
     return (1)
-  for x in range (b ,0 ,-1) :
-    for x in range (c ,0 ,-1) : return (4)
+  for keys in range (tuple[1] ,0 ,-1) :
+    for keys in range (tuple[2] ,0 ,-1) : return (4)
     return (2)
-  for x in range (c ,0 ,-1) : return (3)
+  for keys in range (tuple[2] ,0 ,-1) : return (3)
   return (0)
 
-print(efficient_for_logic(1 ,0 ,1))
+for keys in dictionary_of_tuples:
+  print(keys + ":", dictionary_of_tuples[keys],segmenting_via_for(dictionary_of_tuples[keys]))
