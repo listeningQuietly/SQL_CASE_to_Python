@@ -1,10 +1,10 @@
-/*
+n/*
 To data scientists, data is data is data is... 
 To be able to convert our optimized sort to Python, we must have a collection of data to sort through.
 There are four collection data types in Python 3.7 and they are described as follows for our data use-case.
 */
 
-def python_data_types():
+def python_collection_data_types():
   print("A SET is a collection of items which are unordered, unchangeable*, un-indexed, and without duplicates.")
   print("Can add new and remove items, but cannot change items otherwise due to lacking order and indexes.")
   print("Good for removing duplicates, but bad for many data operations.")
@@ -41,4 +41,4 @@ def python_data_types():
   for keys in dictionary_of_items:
     print(keys+":",dictionary_of_items[keys],type(dictionary_of_items[keys]))
 
-python_data_types()
+python_collection_data_types()
