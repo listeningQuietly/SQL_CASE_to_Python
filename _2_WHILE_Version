@@ -1,5 +1,5 @@
-# Nesting WHILE loops like this normally causes the O-time to increase exponentially, but due to RETURN syntax, it has similar (if not better) processing efficiency to that of the previous IF_Version.
-# While I have not applied timers on previous versions to test runtimes because O-time is extremely accurate when scaling, this is the first time I have thought about doing so to find out what is fastest.
+# WHILE looks strikingly similar to IF, but the only reason it doesn't loop and run forever is because RETURN escapes all loops.
+# Nesting WHILE loops like this also normally causes the O-time to increase exponentially, but due to RETURN syntax, it has similar processing to the previous (IF_Version).
 
 #def segmenting_via_while(a ,b ,c) :
 #  while a == 1 :
