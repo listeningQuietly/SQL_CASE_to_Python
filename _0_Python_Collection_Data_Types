@@ -1,8 +1,6 @@
-n/*
-To data scientists, data is data is data is... 
-To be able to convert our optimized sort to Python, we must have a collection of data to sort through.
-There are four collection data types in Python 3.7 and they are described as follows for our data use-case.
-*/
+# To data scientists, data is data is data is... 
+# To be able to convert our optimized sort to Python, we must have a collection of data to sort through.
+# There are four collection data types in Python 3.7 and they are described as follows for our data use-case.
 
 def python_collection_data_types():
   print("A SET is a collection of items which are unordered, unchangeable*, un-indexed, and without duplicates.")
