@@ -1,5 +1,4 @@
 # Nesting WHILE loops like this normally causes the O-time to increase exponentially, but due to RETURN syntax, it has similar (if not better) processing efficiency to that of the previous IF_Version.
-# This reads disturbingly clean to the human eye.
 # While I have not applied timers on previous versions to test runtimes because O-time is extremely accurate when scaling, this is the first time I have thought about doing so to find out what is fastest.
 
 #def segmenting_while_logic (a ,b ,c) :
