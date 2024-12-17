@@ -1,0 +1,43 @@
+/*
+
+
+*/
+
+def python_data_types():
+  print("A SET is a collection of items which are unordered, unchangeable*, un-indexed, and without duplicates.")
+  print("Can add new and remove items, but cannot change items otherwise due to lacking order and indexes.")
+  print("Good for removing duplicates, but bad for many data operations.")
+  set_of_items = {"a1"}
+  set_of_items.add("b2")
+  set_of_items.update({"b2","c3"}) #update for multiple values like a set.
+  set_of_items |= {"b2","c3"}|{"c3","d4"} #| is like update, but allows for multiples of multiples.
+  set_of_items.remove("d4")
+  for x in set_of_items:
+    print(x)
+
+  print("A LIST is a collection of items which are ordered, changeable, and allow duplicates.")
+  print("A list is. IS ordered, IS changeable, and DOES allow duplicates. Lists are changing.")
+  print("Good for updating, but lacks stability.")
+  list_of_items = ["d4", "e5", "z0"]
+  list_of_items.append("f5")
+  list_of_items.remove("z0")
+  list_of_items[2] = ("f6")
+  for x in list_of_items:
+    print(x)
+
+  print("A TUPLE is a collection of items which are ordered and allow duplicates, but is unchangeable.")
+  print("You cannot change, add, nor remove items, but you can overwrite the tuple completely.")
+  print("Good for save states, bad for altering.")
+  tuple_of_items = ("g7","z0")
+  tuple_of_items = ("g7","h8","i9")
+  for x in tuple_of_items:
+    print(x)
+
+  print("A DICTIONARY is a collection of key:value pairs which are ordered (since 3.7) and changeable, but without duplicates*.")
+  print("Ordered, changeable, and disallows duplicate KEYS. Interestingly, the values can be of any data type.")
+  print("A dictionary of tuples would be like a spreadsheet, but not quite a database.")
+  dictionary_of_items = {"key1":set_of_items,"key2":list_of_items,"key3":tuple_of_items}
+  for keys in dictionary_of_items:
+    print(keys+":",dictionary_of_items[keys],type(dictionary_of_items[keys]))
+
+python_data_types()
