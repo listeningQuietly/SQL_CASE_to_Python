@@ -30,5 +30,6 @@ def segmenting_via_for (tuple) :
   for keys in range (tuple[2] ,0 ,-1) : return (3)
   return (0)
 
+#print(segmenting_via_for(dictionary_of_tuples['tuple8']))
 for keys in dictionary_of_tuples:
   print(keys + ":", dictionary_of_tuples[keys],segmenting_via_for(dictionary_of_tuples[keys]))
