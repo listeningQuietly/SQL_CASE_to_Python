@@ -1,21 +1,40 @@
-/*
-This was exceptionally easy to convert from SQL to Python because CASE works extremely similarly to IF.
-So much so, it felt like a copy-paste translation.
-Given I do not have mountains of data to test the two against each other, I would guess the SQL version has a shorter runtime because that language is designed for set operations, but Python is famous for performing well, regardless of use-case.
-To make it more fair, I should at least put a, b,and c in tuples.
-*/
+# This appears exceptionally similar to SQL CASE because Python IF works extremely similarly (switches by any other name).
+# Initially, I proved the syntax works and later I put a, b,and c in tuples.
 
-def segmenting_if_logic (a ,b ,c) :
-  if a == 1 :
-    if b == 1 :
-      if c == 1 : return (7)
+#def segmenting_via_if (a ,b ,c) :
+#  if a == 1 :
+#    if b == 1 :
+#      if c == 1 : return (7)
+#      return (6)
+#    elif c == 1 : return (5)
+#    return (1)
+#  elif b == 1 :
+#    if c == 1 : return (4)
+#    return (2)
+#  elif c == 1 : return (3)
+#  return (0)
+
+#print(segmenting_via_if(1 ,0 ,1))
+
+# Making an extremely basic dictionary.
+dictionary_of_tuples = {"tuple1": (0,0,0), "tuple2": (0,0,1), "tuple3": (0,1,0), "tuple4": (0,1,1), "tuple5": (1,0,0), "tuple6": (1,0,1), "tuple7": (1,1,0), "tuple8": (1,1,1)}
+#print(dictionary_of_tuples['tuple8'])
+# #for keys in dictionary_of_tuples:
+#  print(keys + ":", dictionary_of_tuples[keys])
+
+def segmenting_via_if (tuple) :
+  if tuple[0] == 1 :
+    if tuple[1] == 1 :
+      if tuple[2] == 1 : return (7)
       return (6)
-    elif c == 1 : return (5)
+    elif tuple[2] == 1 : return (5)
     return (1)
-  elif b == 1 :
-    if c == 1 : return (4)
+  elif tuple[1] == 1 :
+    if tuple[2] == 1 : return (4)
     return (2)
-  elif c == 1 : return (3)
+  elif tuple[2] == 1 : return (3)
   return (0)
 
-print(segmenting_if_logic(1 ,0 ,1))
+#print(segmenting_via_if(dictionary_of_tuples['tuple8']))
+for keys in dictionary_of_tuples:
+  print(keys + ":", dictionary_of_tuples[keys],segmenting_via_if(dictionary_of_tuples[keys]))
