@@ -1,5 +1,4 @@
-# This appears exceptionally similar to SQL CASE because Python IF works extremely similarly (switches by any other name).
-# Initially, I proved the syntax works and later I put a, b,and c in tuples.
+# This appears exceptionally similar to SQL CASE because Python IF works extremely similarly (Boolean logic).
 
 #def segmenting_via_if (a ,b ,c) :
 #  if a == 1 :
