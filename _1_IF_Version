@@ -1,8 +1,8 @@
 # This appears exceptionally similar to SQL CASE because Python IF works extremely similarly (Boolean logic).
 
 #def segmenting_via_if (a ,b ,c) :
-#  if a == 1 :
-#    if b == 1 :
+#  IF a == 1 :
+#    IF b == 1 :
 #      if c == 1 : return (7)
 #      return (6)
 #    elif c == 1 : return (5)
@@ -14,8 +14,8 @@
 #  return (0)
 
 #print(segmenting_via_if(1 ,0 ,1))
-
-dictionary_of_tuples = {"tuple8":(1,1,1),"tuple7":(1,1,0),"tuple6":(1,0,1),"tuple5":(1,0,0),"tuple4":(0,1,1),"tuple3":(0,1,0),"tuple2":(0,0,1),"tuple1":(0,0,0)}
+dictionary_of_tuples = {"tuple8":(1,1,1),"tuple7":(1,1,0),"tuple6":(1,0,1),"tuple5":(1,0,0),
+                        "tuple4":(0,1,1),"tuple3":(0,1,0),"tuple2":(0,0,1),"tuple1":(0,0,0)}
 #print(dictionary_of_tuples['tuple8'])
 
 def segmenting_via_if (tuple) :
