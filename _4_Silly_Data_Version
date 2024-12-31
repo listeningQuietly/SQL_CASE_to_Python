@@ -1,1 +1,46 @@
-silly
+
+dictionary_of_tuples = {"tuple8":(1,1,1) ,"tuple7":(1,1,0) ,"tuple6":(1,0,1) ,"tuple5":(1,0,0) ,"tuple4":(0,1,1) ,"tuple3":(0,1,0) ,"tuple2":(0,0,1) ,"tuple1":(0,0,0)}
+
+def segmenting_via_for (tuple) :
+  for keys in range (tuple[0]) :
+    for keys in range (tuple[1]) :
+      for keys in range (tuple[2]) : return (7)
+      return (6)
+    for keys in range (tuple[2]) : return (5)
+    return (1)
+  for keys in range (tuple[1]) :
+    for keys in range (tuple[2]) : return (4)
+    return (2)
+  for keys in range (tuple[2]) : return (3)
+  return (0)
+
+def wrapper_for_pretty_outputs (dictionary):
+  for keys,values in dictionary.items():
+    segment_value = segmenting_via_for(values)
+    if segment_value == 0:
+      continue
+    print(keys+" :",values,":",segment_value)
+
+print(wrapper_for_pretty_outputs(dictionary_of_tuples))
+
+def create_sorted_dictionary(dictionary):
+  print_dictionary = {}
+  for keys,values in dictionary.items():
+    segment_category = segmenting_via_for(values)
+#    print(print_dictionary.values())
+    if segment_category != 0:
+      print_dictionary[keys] = (values[0], values[1], values[2], segment_category)
+  return (print_dictionary)
+
+#print(type(create_sorted_dictionary(dictionary_of_tuples)))
+print(create_sorted_dictionary(dictionary_of_tuples))
+
+silly_dictionary = {"tuple9":(3,1,1,0,(0,0,0))}
+# old way
+for keys,values in silly_dictionary.items():
+  segment_value = segmenting_via_for(values)
+  if segment_value != 0:
+    print(keys+" :",values,":",segment_value)
+print(silly_dictionary)
+
+print(create_sorted_dictionary(silly_dictionary))
