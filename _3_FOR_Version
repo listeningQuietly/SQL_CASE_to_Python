@@ -16,19 +16,20 @@
 
 #print(segmenting_via_for(1 ,0 ,1))
 
-dictionary_of_tuples = {"tuple1": (0,0,0), "tuple2": (0,0,1), "tuple3": (0,1,0), "tuple4": (0,1,1), "tuple5": (1,0,0), "tuple6": (1,0,1), "tuple7": (1,1,0), "tuple8": (1,1,1)}
+dictionary_of_tuples = {"tuple8": (1, 1, 1), "tuple7": (1, 1, 0), "tuple6": (1, 0, 1), "tuple5": (1, 0, 0),
+                        "tuple4": (0, 1, 1), "tuple3": (0, 1, 0), "tuple2": (0, 0, 1), "tuple1": (0, 0, 0)}
 
 def segmenting_via_for (tuple) :
-  for keys in range (tuple[0] ,0 ,-1) :
-    for keys in range (tuple[1] ,0 ,-1) :
-      for keys in range (tuple[2] ,0 ,-1) : return (7)
+  for keys in range (tuple[0]) :
+    for keys in range (tuple[1]) :
+      for keys in range (tuple[2]) : return (7)
       return (6)
-    for keys in range (tuple[2] ,0 ,-1) : return (5)
+    for keys in range (tuple[2]) : return (5)
     return (1)
-  for keys in range (tuple[1] ,0 ,-1) :
-    for keys in range (tuple[2] ,0 ,-1) : return (4)
+  for keys in range (tuple[1]) :
+    for keys in range (tuple[2]) : return (4)
     return (2)
-  for keys in range (tuple[2] ,0 ,-1) : return (3)
+  for keys in range (tuple[2]) : return (3)
   return (0)
 
 #print(segmenting_via_for(dictionary_of_tuples['tuple8']))
