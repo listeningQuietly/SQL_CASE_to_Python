@@ -21,7 +21,7 @@ def wrapper_for_pretty_outputs (dictionary):
       continue
     print(keys+" :",values,":",segment_value)
 
-print(wrapper_for_pretty_outputs(dictionary_of_tuples))
+#print(wrapper_for_pretty_outputs(dictionary_of_tuples))
 
 def create_sorted_dictionary(dictionary):
   print_dictionary = {}
@@ -33,10 +33,11 @@ def create_sorted_dictionary(dictionary):
   return (print_dictionary)
 
 #print(type(create_sorted_dictionary(dictionary_of_tuples)))
-print(create_sorted_dictionary(dictionary_of_tuples))
+#print(create_sorted_dictionary(dictionary_of_tuples))
 
 silly_dictionary = {"tuple9":(3,1,1,0,(0,0,0))}
 # old way
+print(wrapper_for_pretty_outputs(silly_dictionary))
 for keys,values in silly_dictionary.items():
   segment_value = segmenting_via_for(values)
   if segment_value != 0:
