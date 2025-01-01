@@ -50,16 +50,16 @@ def create_sorted_dictionary(dictionary):
       print_dictionary[keys] = (values[0], values[1], values[2], segment_category)
   return (print_dictionary)
 
-#print(type(create_sorted_dictionary(dictionary_of_tuples)))
-print(create_sorted_dictionary(dictionary_of_tuples))
+saving_sorted_dictionary = create_sorted_dictionary(dictionary_of_tuples)
+print(type(saving_sorted_dictionary))
+print(saving_sorted_dictionary)
 
-saving_my_sorted_dictionary = create_sorted_dictionary(dictionary_of_tuples)
 import csv
 csv_file = 'dictionary2csv.csv'
 with open(csv_file, 'w', newline='') as file:
   writer = csv.writer(file)
   writer.writerow(['Key', 'Value'])
-  for key, value in saving_my_sorted_dictionary.items():
+  for key, value in saving_sorted_dictionary.items():
     writer.writerow([key, value])
 
-print(f"Dictionary saved to {csv_file}")
+print(f"Dictionary saved as {csv_file}")
