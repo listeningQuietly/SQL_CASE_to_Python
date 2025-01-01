@@ -53,7 +53,7 @@ for keys,values in silly_dictionary.items():
     print(keys+" :",values,":",segment_value)
 
 # basically old way, but with wrapper shows unnecessary attributes.
-#wrapper_for_pretty_outputs(silly_dictionary)
+wrapper_for_pretty_outputs(silly_dictionary)
 
 # New, safest way
-create_sorted_dictionary(silly_dictionary)
+print(create_sorted_dictionary(silly_dictionary))
