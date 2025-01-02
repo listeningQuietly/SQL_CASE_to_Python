@@ -1,5 +1,5 @@
 import csv
-silly_dictionary = {"tuple9":(3,1,1,'A',(0,0,0))}
+silly_dictionary = {"tuple9":(2,1,1,'Apple',(1,0,0)),"tuple10":(0,1,1,'Banana',(0,1,1)),"tuple11":(2,0,1,'Cantaloupe',(0,1,0))}
 
 def segmenting_via_if (tuple) :
   if tuple[0] == 1 :
@@ -14,16 +14,42 @@ def segmenting_via_if (tuple) :
   elif tuple[2] == 1 : return (3)
   return (0)
 
-def wrapper_for_pretty_outputs (dictionary):
+def segmenting_via_for (tuple) :
+  for keys in range (tuple[0]) :
+    for keys in range (tuple[1]) :
+      for keys in range (tuple[2]) : return (7)
+      return (6)
+    for keys in range (tuple[2]) : return (5)
+    return (1)
+  for keys in range (tuple[1]) :
+    for keys in range (tuple[2]) : return (4)
+    return (2)
+  for keys in range (tuple[2]) : return (3)
+  return (0)
+
+# old way with IF
+def wrapper_for_pretty_outputs_via_if (dictionary):
   for keys,values in dictionary.items():
     segment_value = segmenting_via_if(values)
     if segment_value == 0:
       pass
     else:
-      print(keys+" :",values,":",segment_value)
+      print("Via IF "+keys+" :",values,":",segment_value)
 
-#wrapper_for_pretty_outputs(silly_dictionary)
+print(type(wrapper_for_pretty_outputs_via_if(silly_dictionary)))
 
+# old way with FOR
+def wrapper_for_pretty_outputs_via_for (dictionary):
+  for keys,values in dictionary.items():
+    segment_value = segmenting_via_for(values)
+    if segment_value == 0:
+      pass
+    else:
+      print("Via FOR "+keys+" :",values,":",segment_value)
+
+print(type(wrapper_for_pretty_outputs_via_for(silly_dictionary)))
+
+# New, safer way with IF disposes of 'extra data'
 def create_sorted_dictionary(dictionary):
   print_dictionary = {}
   for keys,values in dictionary.items():
@@ -33,27 +59,15 @@ def create_sorted_dictionary(dictionary):
       print_dictionary[keys] = (values[0], values[1], values[2], segment_category)
   return (print_dictionary)
 
-#print(type(create_sorted_dictionary(silly_dictionary)))
-#print(create_sorted_dictionary(silly_dictionary))
+saving_sorted_dictionary = create_sorted_dictionary(silly_dictionary)
+print(saving_sorted_dictionary)
+print(type(saving_sorted_dictionary))
 
-saving_my_sorted_dictionary = create_sorted_dictionary(silly_dictionary)
-csv_file = 'dictionary2csv.csv'
+csv_file = 'silly_dictionary2csv.csv'
 with open(csv_file, 'w', newline='') as file:
   writer = csv.writer(file)
   writer.writerow(['Key', 'Value'])
-  for key, value in saving_my_sorted_dictionary.items():
+  for key, value in saving_sorted_dictionary.items():
     writer.writerow([key, value])
 
 print(f"Dictionary saved to {csv_file}")
-
-# old way
-for keys,values in silly_dictionary.items():
-  segment_value = segmenting_via_if(values)
-  if segment_value != 0:
-    print(keys+" :",values,":",segment_value)
-
-# basically old way, but with wrapper shows unnecessary attributes.
-wrapper_for_pretty_outputs(silly_dictionary)
-
-# New, safest way
-print(create_sorted_dictionary(silly_dictionary))
