@@ -1,5 +1,6 @@
 import csv
-silly_dictionary = {"tuple9":(2,1,1,'Apple',(1,0,0)),"tuple10":(0,1,1,'Banana',(0,1,1)),"tuple11":(2,0,1,'Cantaloupe',(0,1,0))}
+silly_dictionary = {"tuple9":(2,1,1,'Apple',(1,0,0)),"tuple10":(0,1,1,'Banana',(0,1,1)),"tuple11":(2,0,1,'Cantaloupe',(1,1,0))}
+silly2_dictionary = {"tuple9":(2,1,1,'Apple',(1,0,0)),"tuple10":(0,1,1,'Banana',(0,1,1)),"tuple12":('',0,1,'Durian',(1,1,0))}
 
 def segmenting_via_if (tuple) :
   if tuple[0] == 1 :
@@ -53,13 +54,13 @@ print(type(wrapper_for_pretty_outputs_via_for(silly_dictionary)))
 def create_sorted_dictionary(dictionary):
   print_dictionary = {}
   for keys,values in dictionary.items():
-    segment_category = segmenting_via_if(values)
+    segment_category = segmenting_via_if(values) # 1 line update required.
 #    print(print_dictionary.values())
     if segment_category != 0:
       print_dictionary[keys] = (values[0], values[1], values[2], segment_category)
   return (print_dictionary)
 
-saving_sorted_dictionary = create_sorted_dictionary(silly_dictionary)
+saving_sorted_dictionary = create_sorted_dictionary(silly2_dictionary)
 print(saving_sorted_dictionary)
 print(type(saving_sorted_dictionary))
 
