@@ -16,6 +16,15 @@
 
 #print(segmenting_via_for(1 ,0 ,1))
 
+Converting SQL to Python (Part 4)
+David Dodge
+David Dodge
+Senior Data Scientist
+
+
+January 6, 2025
+Last week I showed how versatile Python can be with a little bit of humor regarding thrice nested WHILE loops. Even using a looping method that implicitly applies a range to loop, that looping detail can be ignored with RETURN. The aforementioned WHILE loops had an explicit conditional of equaling zero to start a loop (like IF/ELIF), but the FOR loops start if a non-0 integer exists at that location (tuple[x]). Otherwise, this snippet reads and works similarly to WHILE.
+
 dictionary_of_tuples = {"tuple8":(1,1,1) ,"tuple7":(1,1,0) ,"tuple6":(1,0,1) ,"tuple5":(1,0,0) ,"tuple4":(0,1,1) ,"tuple3":(0,1,0) ,"tuple2":(0,0,1) ,"tuple1":(0,0,0)}
 
 def segmenting_via_for (tuple) :
@@ -30,6 +39,7 @@ def segmenting_via_for (tuple) :
     return (2)
   for keys in range (tuple[2]) : return (3)
   return (0)
+This week I focused on how best to produce the results for later usage. The following snippet includes an accuracy upgrade over the two lines version in both the WHILE and IF, but it is still lacking something besides the category 0 rows.
 
 def wrapper_for_pretty_outputs (dictionary):
   for keys,values in dictionary.items():
@@ -40,6 +50,7 @@ def wrapper_for_pretty_outputs (dictionary):
       print(keys+" :",values,":",segment_value)
 
 wrapper_for_pretty_outputs(dictionary_of_tuples)
+All my previous iterations (including the above wrapper) print out each row as it is processed so you the human can read and recognize the processing is accurate, but the outputs are not saved anywhere which is not very useful for production or automation purposes. The segment value is not even added to the dictionary_of_tuples. The question becomes, How could I save my data and results together for further analysis?
 
 def create_sorted_dictionary(dictionary):
   print_dictionary = {}
@@ -53,6 +64,7 @@ def create_sorted_dictionary(dictionary):
 saving_sorted_dictionary = create_sorted_dictionary(dictionary_of_tuples)
 print(type(saving_sorted_dictionary))
 print(saving_sorted_dictionary)
+Because Python dictionaries and tuples are immutable*, creating a new, sorted dictionary for immediate processing is necessary and sufficient for more Python analysis, but insufficient if we want to export those results for presentation or analysis with other tools. Exporting as a CSV would be sufficient.
 
 import csv
 csv_file = 'dictionary2csv.csv'
@@ -63,3 +75,9 @@ with open(csv_file, 'w', newline='') as file:
     writer.writerow([key, value])
 
 print(f"Dictionary saved as {csv_file}")
+Altogether, this is not optimized (aside from the FOR snippet), but it is very modular. We can process a dictionary, export the results as a CSV, and easily make upgrades to specific steps in the process. Below are the outputs from the IDE and the CSV. IDE OutputsCSV contents:
+
+
+In any event, no more Tuple1.
+
+CSV. YAY.
