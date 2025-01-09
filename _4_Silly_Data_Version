@@ -1,10 +1,9 @@
-Last week I focused on how to store the outputs while using FOR loops to path, but it occurred to me, Python is so versatile, it allows things a relational database would not. And so dear readers, a new question is born, How would Python handle bad data?
+Last week I focused on how to store the outputs while using FOR loops to path, but it occurred to me, Python is so versatile, it allows things a relational database would not. And so dear readers, a new question is realized, 'How would Python handle less structured data?'
 
 import csv
 silly_dictionary = {"tuple9":(2,1,1,'Apple',(1,0,0)),"tuple10":(0,1,1,'Banana',(0,1,1)),"tuple11":(2,0,1,'Cantaloupe',(1,1,0))}
 silly2_dictionary = {"tuple9":(2,1,1,'Apple',(1,0,0)),"tuple10":(0,1,1,'Banana',(0,1,1)),"tuple12":('',0,1,'Durian',(1,1,0))}
-
-Just another weekday. Dictionaries are collections of anything: Integers, Strings, Tuples, Tuples within Tuples, anything that wont throw an error during run time is welcome. And even though I mentioned Python IF/ELIF was the best translation for SQL CASE syntax, How does it compare to FOR loops?
+Just another weekday. Dictionaries are collections of anything: Integers, Strings, Tuples, Tuples within Tuples, anything that won't throw an error during run time is welcome. And even though I mentioned Python IF/ELIF was the best translation for SQL CASE syntax, How does it compare to FOR loops?
 
 def segmenting_via_if (tuple) :
   if tuple[0] == 1 :
@@ -31,8 +30,7 @@ def segmenting_via_for (tuple) :
     return (2)
   for keys in range (tuple[2]) : return (3)
   return (0)
-
-Previously, I briefly mentioned WHILE directly compares the value to equaling 1 (like IF/ELIF), but FOR compares integers to not equaling zero. This means the FOR method will throw errors if anything non-Integer is at that location, but IF/ELIF will not. Also because of this, the rows get categorized differently because that's how the pathing works (443 vs 745), but for now we have to duplicate and update the wrapper-version so the IDE knows when to call which and labels them for us appropriately.
+Previously, I briefly mentioned WHILE directly compares the value to equaling 1 (like IF/ELIF), but FOR compares integers to not equaling 0. This means the FOR method will throw errors if anything non-Integer is at that location, but IF/ELIF and WHILE will not. Also because of this, the rows get categorized differently (443 vs 745) and we have to duplicate and update the wrapper-version so the IDE knows when to call which and labels them for us appropriately.
 
 # old way with IF
 def wrapper_for_pretty_outputs_via_if (dictionary):
@@ -55,8 +53,12 @@ def wrapper_for_pretty_outputs_via_for (dictionary):
       print("Via FOR "+keys+" :",values,":",segment_value)
 
 print(type(wrapper_for_pretty_outputs_via_for(silly_dictionary)))
+Minimize image
+Edit image
+Delete image
 
-The above wrappers really outline how this prints each line as they are processed because I called for the data type of the wrapper outputs and got "NoneType" after every row output is printed. Last, but not least, I did not have a great method of saving outputs when I started translating to Python. How does the new saving method work with IF and silly data?
+Note of the differences (443 vs 745) and the extra attributes.
+The above wrappers and their outputs highlight how wasteful it was considering the old output method prints each line as they are processed when I call for the data type of the wrapper outputs. Did I want the results printed or the data type of the results? I cannot ask for the resultant data types without also printing the results without separating the outputs from the means of displaying the outputs. Last, but not least, I did not have a great method of saving outputs when I started translating to Python. How does the new saving method work with IF/ELIF and silly data?
 
 # New, safer way with IF disposes of 'extra data'
 def create_sorted_dictionary(dictionary):
@@ -72,12 +74,6 @@ saving_sorted_dictionary = create_sorted_dictionary(silly2_dictionary)
 print(saving_sorted_dictionary)
 print(type(saving_sorted_dictionary))
 
-The new method is pretty neat. It was exceptionally easy to change which sorting method was used because of how modular it is (not possible with the old version). Also, the new method does not carry unnecessary data forward, which makes it more precise, almost like a SQL view. Here are the IDE and CSV outputs to confirm:
-
-443 vs 745 and you can see how much less data is carried forward by the new method.
-
-Simple CSV, but that is a good thing.I would call the new method good enough for now, because IF is stable, accurate, and the outputs can be analyzed by other tools, which is the real goal. You wont get pretty graphs or pretty dashboards in Python without a multitude of import statements. Python is extremely versatile and good for many things, but just the fact Python will store NULL values in a field shows it may be too versatile to be a competitor to relational databases.
-
 csv_file = 'silly_dictionary2csv.csv'
 with open(csv_file, 'w', newline='') as file:
   writer = csv.writer(file)
@@ -86,3 +82,16 @@ with open(csv_file, 'w', newline='') as file:
     writer.writerow([key, value])
 
 print(f"Dictionary saved to {csv_file}")
+The new method is pretty neat. It was exceptionally easy to change which sorting method was used because of how modular it is (not possible with the old version). Additionally, the new method does not carry unnecessary data forward, which makes it more precise, almost like a SQL projection. The IDE and CSV outputs are as follows:
+
+Minimize image
+Edit image
+Delete image
+
+Crisp, clean dictionary with tuple values including the Category.
+Maximize image
+Edit image
+Delete image
+
+Simple CSV, but that is a good thing.
+I would call the new method good enough for now, because IF/ELIF is stable, accurate, and the outputs can be analyzed by other tools, which is a great goal in general. You won't get pretty graphs or pretty dashboards in Python without a multitude of import statements and other tools. Python is extremely versatile and good for many things, however, it will store nonsense values in fields, which indicates it may be too versatile to be a competitor to relational databases.
